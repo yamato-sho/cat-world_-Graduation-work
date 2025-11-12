@@ -817,6 +817,53 @@ z-index: 0;
     margin-top: 0.5rem;
 }
 
+   /* 戻るボタン */
+
+.button003{
+    margin-top: 50px;
+}
+.button003 a {
+    color: #FFF;
+    /* background: #ffffff; */
+    border-radius: 50px;
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    max-width: 260px;
+    padding: 10px 25px;
+    background: rgb(107, 114, 128);
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    
+    
+}
+.button003 a:hover {
+    background: #4b5563;
+    color: #FFF;
+    transform: scale(1.05);
+}
+.button003 a:after {
+    content: '';
+    width: 5px;
+    height: 5px;
+    
+    border-top: 3px solid #ffffff;
+    border-left: 3px solid #ffffff; 
+    transform: rotate(-45deg) translateY(-50%); 
+    
+    position: absolute;
+    top: 50%;
+    left: 20px; 
+    
+    border-radius: 1px;
+    transition: 0.3s ease-in-out;
+}
+.button003 a:hover:after {
+    border-color: #FFF;
+}
+
 /* モーダル */
 .modal {
     display: none;
