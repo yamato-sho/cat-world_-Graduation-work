@@ -28,8 +28,8 @@ document.addEventListener('DOMContentLoaded', () => {
             e.stopPropagation();
             const info = getTileInfo(tile);
             
-            //if (info.linkType === 'external' && info.url) {
-               // window.open(info.url, '_blank');
+            if (info.linkType === 'external' && info.url) {
+                window.open(info.url, '_self');
             } else {
                 showModal(info);
             }
