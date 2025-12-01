@@ -231,11 +231,12 @@ body {
 .type-1{
     left: 23%;  /* Random % */
     top: 80%;   /* Random % */
-    width: 350px;
-    height: 200px;
+    width: 220px;
+    height: 220px;
     background-color: #ffffff;
     /* .tileクラスで既に position: absolute; が適用されているため、ここでは記述を省略 */
 }
+
 
 .type-shopping{
     left: 70%;  /* Random % */
@@ -265,8 +266,8 @@ body {
 .type-4{
     left: 55%;
     top: 80%;
-    width: 220px;
-    height: 220px;
+    width: 320px;
+    height: 320px;
     background-color: #ffffff;
     position: absolute; 
 }
@@ -387,8 +388,8 @@ body {
 .type-18 { 
     left: 90%; 
     top: 8%; 
-    width: 220px; 
-    height: 220px; 
+    width: 320px; 
+    height: 320px; 
     background-color: #ffffff; 
     position: absolute; 
 }
@@ -404,7 +405,7 @@ body {
 .type-20 { 
     left: 4%; 
     top: 7%; 
-    width: 420px; 
+    width: 220px; 
     height: 220px; 
     background-color: #ffffff; 
     position: absolute; 
@@ -436,8 +437,8 @@ body {
 .type-24 { 
     left: 75%; 
     top: 35%; 
-    width: 220px; 
-    height: 220px; 
+    width: 320px; 
+    height: 320px; 
     background-color: #ffffff; 
     position: absolute; 
 }
@@ -571,7 +572,7 @@ body {
 }
 
 .modal-content {
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: rgb(245, 242, 237);
     padding: 40px;
     border-radius: 20px;
     color: white;
@@ -664,3 +665,8 @@ body {
         height: 120px;
     } */
 }
+
+
+
+/* 仮追加 */
+
