@@ -135,6 +135,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // 初期位置を中央
     window.scrollTo(1500, 1500);
     updateMinimap();
+     document.addEventListener('DOMContentLoaded', function () {
+        setTimeout(function () {
+            window.scrollTo(1500, 1400);
+        }, 0);
+    }, false);
 
     // キーボードショートカット（矢印キー＋WASD）
     document.addEventListener('keydown', (e) => {
