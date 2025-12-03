@@ -72,6 +72,7 @@ body {
     
 }
 
+
 /* ----- タイルそれぞれの基本スタイル ----- */
 .tile {
     position: absolute;
@@ -92,11 +93,12 @@ body {
     box-sizing: border-box;
     position: relative; /* 子要素の配置基準 */
     overflow: hidden; /* 画像がはみ出さないようにする */
+    box-shadow: 0 5px 10px  rgba(33, 82, 97, 0.472);
 }
 
 .tile:hover {
     transform: scale(1.1);
-    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    box-shadow: 0 12px 40px #00B1B0;
 }
 
 .tile:active {
@@ -117,15 +119,36 @@ body {
     background: rgba(255, 255, 255, 0.2); /* アイコンの背景を半透明に */
 }
 
+/* ねこしるタイトル */
+.top{
+    background-color: rgb(245, 242, 237);
+opacity: 1;
+background-image: radial-gradient(rgb(255, 137, 11)1px, rgb(245, 242, 237) 1px);
+background-size: 10px 10px;
 
+
+
+    /* border: 8px solid rgb(255, 137, 11); */
+    top: 44%;
+    left: 39%;
+    position: relative;
+    width: 850px;
+    height: 550px;
+    z-index: 0;
+    border-radius: 50px;
+}
 .title {
+    top: -7%;
+    right: 30%;
     margin-left: 16px;
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 8px;
     opacity: 0.9;
     /* 仮 */
-    position: relative;
+    position:absolute;
+    z-index: 2;
+    
 }
 
 .tile-title {
@@ -140,13 +163,13 @@ body {
 .tile-desc {
     font-size: 0.8rem;
     opacity: 0.7;
-    line-height: 1.3;
+    line-height: 2.1;
 }
 
 
 
 /*------------------ タイル各設定---------------------- */
-.type_logo,.type-ex{
+.type_logo{
     position: absolute;
     text-align: center;
     width:500px;
@@ -156,12 +179,66 @@ body {
     box-shadow: none !important;
     cursor: default !important;
     transition: none !important;
-    padding: 0; /* ロゴなのでpaddingを削除 */
+    padding: 0;
+    z-index: 2;
 }
+
+.type-ex{
+    position: absolute;
+
+    line-height: 2.1;
+    /* ホバー時の動作を無効化 */
+
+    /* box-shadow: none !important; */
+    cursor: default !important;
+    transition: none !important;
+    padding: 20px;
+
+    top: 50%;
+    left: 57%;
+    backdrop-filter: none !important; 
+    position: absolute;
+    border: 5px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+    width: 9%;
+    box-shadow: 15px 15px #FD7E00;
+  display: inline-block;
+  color: #000000;
+  z-index: 2;
+
+}
+
+
+.type-ex::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-style: solid;
+  border-width: 0 20px 20px 0;
+  border-color: transparent rgb(0, 0, 0) transparent;
+  translate: -100% -50%;
+  
+}
+
+.type-ex::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  border-style: solid;
+  border-width: 0 9px 9px 0;
+  border-color: transparent #ffffff transparent transparent;
+  translate: -100% calc(-50% - 0.4px);
+}
+
+
 
 .type_logo:hover,.type-ex:hover{
     transform: none; /* 拡大を無効化 */
     box-shadow: none;
+        box-shadow: 15px 15px #FD7E00;
 }
 
 .type_logo,.tile-title {
@@ -176,33 +253,43 @@ body {
 }
 
 .top-img{
-    width: 50%;
+    width: 100%;
+    z-index: -1;
 
 }
 .type_logo{
-    top: 45%;
+    top: 46%;
     left: 46%;
     width: 420px;
     height: 520px;
     background-color: #ffffff;
-    position:absolute; /* 変更なし */
+    position:absolute; 
 }
-.type-ex{
-    top: 50%;
-    left: 55%;
-    backdrop-filter: none !important; 
-    position: absolute; /* 💥修正: relativeからabsoluteに変更 */
+
+/* キャプション */
+.type-c{
+    font-size: 10px;
+    top: 56%;
+    left: 43%;
+    position: absolute;
+        /* background: #ffffff; */
+    /* border: 4px solid rgb(237, 133, 50) ; */
+    border-radius: 20px;
+        padding: 20px;
+        z-index: 2;
 }
 
 .comment_box {
     padding: 20px;
-    top: 47%;
+    top: 49%;
     left: 43%;
     width: 200px;
     position: absolute;
     background: #ffffff;
-    border: 4px solid #000000;
+    border: 4px solid rgb(0, 0, 0) ;
     border-radius: 20px;
+        box-shadow: -15px 15px #FD7E00;
+        z-index: 2;
 }
 .comment_box:after, .comment_box:before {
     left: 100%;
@@ -223,7 +310,7 @@ body {
 }
 .comment_box:before {
     border-color: rgba(0, 0, 0, 0);
-    border-left-color: #000000;
+    border-left-color: rgb(0, 0, 0) ;
     border-width: 16px;
     margin-top: -16px;
 }
@@ -234,7 +321,7 @@ body {
     width: 220px;
     height: 220px;
     background-color: #ffffff;
-    /* .tileクラスで既に position: absolute; が適用されているため、ここでは記述を省略 */
+
 }
 
 
@@ -244,7 +331,7 @@ body {
     width: 200px;
     height: 400px;
     background-color: #ffffff;
-    /* .tileクラスで既に position: absolute; が適用されているため、ここでは記述を省略 */
+
 }
 .type-0 { 
     left: 5%;
@@ -388,8 +475,8 @@ body {
 .type-18 { 
     left: 90%; 
     top: 8%; 
-    width: 320px; 
-    height: 320px; 
+    width: 220px; 
+    height: 220px; 
     background-color: #ffffff; 
     position: absolute; 
 }
@@ -451,7 +538,7 @@ body {
     position: absolute; 
 }
 .type-26 { 
-    left: 50%; 
+    left: 70%; 
     top: 10%; 
     width: 420px; 
     height: 420px; 
@@ -556,36 +643,80 @@ body {
     left: 0;
 }
 
+/* 追加 */
+
+
 
 /* ----- モーダル関連 ----- */
 .modal {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0,0,0,0.8);
+    background: rgba(0, 0, 0, 0.473);
     display: none;
     align-items: center;
     justify-content: center;
     z-index: 2000;
+
 }
 
-.modal-content {
-    background: rgb(245, 242, 237);
-    padding: 40px;
-    border-radius: 20px;
-    color: white;
-    text-align: center;
-    max-width: 500px;
+
+.m-n{
+        background: rgb(245, 242, 237);
+    margin-top: 25px; 
+    margin-bottom: 25px; 
+    padding: 50px ; 
+    border-radius: 30px; 
+    
+    color: rgb(0, 0, 0); 
+
+    max-width: 450px; 
     width: 90%;
-    transform: scale(0);
-    transition: transform 0.3s ease;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); 
+    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     position: relative;
+    overflow-y: auto;
+    max-height: 85vh;    
+
+  /*IE(Internet Explorer)・Microsoft Edgeへの対応*/
+  -ms-overflow-style: none;
+  /*Firefoxへの対応*/
+  scrollbar-width: none;
+}
+ /*Google Chrome、Safariへの対応*/
+.contents_box::-webkit-scrollbar{
+  display: none;
+
+}
+
+.modal-content img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    display: block;
+    margin: 0px auto 25px auto; 
+    border-radius: 15px;
+    position: relative; 
+    z-index: 1;
+}
+
+.modal-content h3{
+    margin-bottom: 4%;
+    text-align: center;
+  font-weight:bold;
+  border-bottom: dotted 3px #53535372;
+  margin: 0 auto 50px;
+  padding: 0 0 5px 0;
 }
 
 .modal.active {
     display: flex;
+    opacity: 1;
 }
 
 .modal.active .modal-content {
@@ -593,21 +724,25 @@ body {
 }
 
 .close-btn {
+    top: 40px; 
+    right: 64px;
+
     position: absolute;
-    top: 15px;
-    right: 20px;
+
     background: none;
     border: none;
-    color: white;
+    color: rgb(0, 0, 0);
     font-size: 2rem;
     cursor: pointer;
     opacity: 0.7;
     transition: opacity 0.3s ease;
+z-index: 2010;
 }
 
 .close-btn:hover {
     opacity: 1;
 }
+
 
 /* ----- ミニマップ関連 ----- */
 
@@ -641,7 +776,7 @@ body {
     background: #4ecdc4;
     border-radius: 50%;
     box-shadow: 0 0 6px #4ecdc4;
-    z-index: 10; /* ビューポート(minimap-viewport)の上に表示されるように、z-indexを上げる */
+    z-index: 10; 
 }
 
 .minimap-viewport {
@@ -651,7 +786,7 @@ body {
     box-shadow: 0 0 10px #ff6b6b;
     width: 50px;
     height: 35px;
-     z-index: 5; /* ドットより低い値を設定 */
+     z-index: 5;
 }
 
 /* メディアクエリ（レスポンシブデザイン） */
@@ -669,4 +804,245 @@ body {
 
 
 /* 仮追加 */
+.tile-image01,.tile_image2,.tile_image3,.tile-image4,.tile-image5,.tile-image6,
+.tile-image7,.tile-image8,.tile-image9,.tile-image10,.tile-image11,.tile-image12,.tile-image13,
+.tile-image14,.tile-image15,.tile-image16,.tile-image17,.tile-image18,.tile-image19,.tile-image20,
+.tile-image21,.tile-image22,.tile-image23,.tile-image24,.tile-image25,.tile-image26,.tile-image27,
+.tile-image28,.tile-image29,.tile-image30,.tile-image31,.tile-image32,.tile-image33,.tile-image34,.tile-image35 ,.tile-image36
+,.tile-image37,.tile-image38,.tile-image39,.tile-image40{
+    position: absolute;
+    border-radius: 5%;
+    opacity: 0.7;
+}
 
+.tile-image01{
+    position: absolute;
+    top: 87%;
+    right: 67%;
+    width: 9%;
+    border-radius: 5%;
+}
+
+.tile-image2{
+    position: absolute;
+    top: 65%;
+    right:50%;
+    width: 13%;
+    border-radius: 5%;
+}
+
+.tile-image3{
+    position: absolute;
+    top: 90%;
+    right:90%;
+    width: 8%;
+    border-radius: 5%;
+}
+
+.tile-image4{
+    position: absolute;
+    top: 64%;
+    right:35%;
+    width: 12%;
+    border-radius: 5%;
+}
+.tile-image5{
+    position: absolute;
+    top: 60%;
+    right:30%;
+    width: 8%;
+    border-radius: 8%;
+}
+.tile-image6{
+    position: absolute;
+    top: 77%;
+    right:55%;
+    width: 12%;
+    border-radius: 5%;
+}
+.tile-image7{
+    position: absolute;
+    top: 70%;
+    right:32%;
+    width: 12%;
+    border-radius: 5%;
+}
+.tile-image8{
+    position: absolute;
+    top: 70%;
+    right:47%;
+    width: 15%;
+    border-radius: 5%;
+}
+.tile-image9{
+    position: absolute;
+    top: 28%;
+    right:47%;
+    width: 15%;
+    border-radius: 5%;
+}
+.tile-image10{
+    position: absolute;
+    top: 28%;
+    right:52%;
+    width: 18%;
+    border-radius: 5%;
+}
+.tile-image11{
+    position: absolute;
+    top: 36%;
+    right:52%;
+    width: 16%;
+    border-radius: 5%;
+}
+.tile-image12{
+    top: 16%;
+    right:67%;
+    width: 12%;
+}
+.tile-image13{
+    top: 5%;
+    right:66%;
+    width: 18%;
+}
+.tile-image14{
+    top: 12%;
+    right:81%;
+    width: 15%;
+}
+.tile-image15{
+    top: 21%;
+    right:80%;
+    width: 18%;
+}
+.tile-image16{
+    top: 46%;
+    right:80%;
+    width: 16%;
+}
+.tile-image17{
+    top: 50%;
+    right:74%;
+    width: 16%;
+}
+.tile-image18{
+    top: 76%;
+    right:74%;
+    width: 14%;
+}
+.tile-image19{
+    top: 83%;
+    right:85%;
+    width: 10%;
+}
+.tile-image20{
+    top: 87%;
+    right:74%;
+    width: 20%;
+}
+.tile-image21{
+    top: 87%;
+    right:50%;
+    width: 20%;
+}
+.tile-image22{
+    top: 92%;
+    right:50%;
+    width: 6%;
+}
+.tile-image23{
+    top: 70%;
+    right:64%;
+    width: 16%;
+}
+.tile-image24{
+    top: 64%;
+    right:59%;
+    width: 20%;
+}
+.tile-image25{
+    top: 72%;
+    right:19%;
+    width: 20%;
+}
+.tile-image26{
+    top: 52%;
+    right:19%;
+    width: 10%;
+}
+.tile-image27{
+    top: 50%;
+    right:6%;
+    width: 18%;
+}
+.tile-image28{
+    top: 9%;
+    right:0%;
+    width: 15%;
+}
+.tile-image29{
+    top: 1%;
+    right:1%;
+    width: 18%;
+}
+.tile-image30{
+    top: 2%;
+    right:20%;
+    width: 28%;
+}
+.tile-image31{
+    top: 25%;
+    right:14%;
+    width: 20%;
+}
+
+.tile-image32{
+    top: 40%;
+    right:24%;
+    width: 8%;
+}
+.tile-image33{
+    top: 44%;
+    right:17%;
+    width: 18%;
+}
+.tile-image34{
+    top: 42%;
+    right:1%;
+    width: 14%;
+}
+.tile-image35{
+    top: 20%;
+    right:0%;
+    width: 17%;
+}
+.tile-image36{
+    top: 55%;
+    right:11%;
+    width: 21%;
+}
+.tile-image37{
+    top: 90%;
+    right:24%;
+    width: 11%;
+}
+.tile-image38{
+    top: 74%;
+    right:10%;
+    width: 11%;
+}
+.tile-image39{
+    top: 74%;
+    right:5%;
+    width: 6%;
+}
+.tile-image39{
+    top: 4%;
+    right:20%;
+    width: 10%;
+}
+.tile-image40{
+    top: 20%;
+    right:37%;
+    width: 10%;
+}
