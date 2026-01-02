@@ -59,17 +59,13 @@ z-index: 0;
 .header {
     text-align: center;
     margin-bottom: 2rem;
-    /* position: relative; を削除 */
-    /* z-index: 1; を削除 */
+
 }
 
 
 .header-image{
     /* display: block; */
     width: 100vw;
-    /* height: 20vw; */
-    /* height: auto; */
-    /* margin-left: calc(50% - 50vw); */
     margin-top: 0;
     padding: 0;
     z-index: 0;
@@ -77,6 +73,8 @@ z-index: 0;
     top: 0;
     left: 0;
     overflow: hidden;
+    /* filter: brightness(50%); */
+    opacity: 0.5;
 }
 
 .title {
@@ -124,10 +122,7 @@ z-index: 0;
 }
 
 
-/* info-box に代わるグリッドコンテナ */
 .info-grid {
-    /* display: grid; */
-    /* grid-template-columns: 1fr; スマホでは縦並び */
     gap: 1rem;
     margin-bottom: 2rem;
     display: flex;
@@ -135,14 +130,13 @@ z-index: 0;
 }
 @media (max-width: 768px) {
 .info-grid {
-        /* 768px以上で横並びになる設定が、Flexboxの場合はデフォルトで適用されます */
-        flex-wrap: wrap; /* 💡 念のため追加: 画面が狭くなった時に折り返す */
+
+        flex-wrap: wrap; 
     }
 
 }
 
 
-/* そのほか３ボックスデザイン */
 
 /* 個別の情報カードのデザイン */
 .info-item-card {
@@ -194,16 +188,14 @@ z-index: 0;
 
 /* ３カード画像 */
 .card-image-placeholder {
-    height: 80px; /* 画像の高さ */
-    background: #e5e7eb; /* 画像がない場合のプレビュー色 */
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     display: flex;
     align-items: center;
     justify-content: center;
     font-size: 0.875rem;
-    color: #9ca3af;
-    overflow: hidden; /* 実際の画像が入ることを想定 */
+    /* color: #9ca3af; */
+    overflow: hidden; 
 }
 
 /* 説明文 */
@@ -260,7 +252,7 @@ z-index: 0;
 .try-img {
     position: absolute;
     z-index: 0; 
-    width: 20%; /* 画像のサイズ */
+    width: 20%; 
     height: auto;
 }
 
@@ -283,13 +275,12 @@ z-index: 0;
     right: 10px;
 }
 
-/* --- モバイル対応 (画像を小さく) --- */
+/* --- モバイル対応  --- */
 @media (max-width: 767px) {
     .banner-img {
         width: 100px; 
     }
     
-    /* テキストサイズも調整 */
     .text-line-1 {
         font-size: 1.1rem;
     }
@@ -299,7 +290,6 @@ z-index: 0;
 
 
 /* タブボタン */
-/* タブボタンのコンテナ */
 .tab-buttons {
     display: flex;
     justify-content: center; 
@@ -335,7 +325,6 @@ z-index: 0;
     margin-right: 0.25rem; 
 }
 
-/* アクティブなタブ */
 .tab-btn.active {
     background: white; 
     color: #FD7E00; 
@@ -344,7 +333,7 @@ z-index: 0;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 
                 0 1px 0 1px white; 
     z-index: 2; 
-    margin-bottom: -1px; /* カードの上部ボーダーとぴったり重なるように微調整 */
+    margin-bottom: -1px; 
 }
 
 
@@ -484,10 +473,9 @@ z-index: 0;
 }
 
 @media (min-width: 768px) {
-    /* このメディアクエリが横並びの原因です。 */
     .grid-2 {
-        grid-template-columns: 1fr 1fr; /* 👈 この行を削除またはコメントアウト */
-        /* grid-template-columns: 1fr;  👈 代わりにこうするとPCでも縦並びになります */
+        grid-template-columns: 1fr 1fr; 
+
     }
 }
 
@@ -840,7 +828,7 @@ z-index: 0;
     
 }
 .button003 a:hover {
-    background: #4b5563;
+    background: rgb(162, 168, 180);
     color: #FFF;
     transform: scale(1.05);
 }
