@@ -72,38 +72,189 @@ body {
     
 }
 /* 保護者の方へボタン */
-.button-2 {
+.button_1{
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    font-size: 1rem;
     display: flex;
-    justify-content: center;
     align-items: center;
     width: 200px;
     margin:0 auto;
-    padding: .9em 2em;
+    /* padding: 0.5em 1em; */
     border: none;
-    border-radius: 25px;
+    border-radius: 30px;
     background-color: #219DDD;
     color: #fff;
-    font-weight: 500;
     font-size: 1em;
-    font-family: "Zen Maru Gothic",'Arial', sans-serif;
-    transition: all  0.3s ease;
+filter: drop-shadow(0px 2px 4px #ccc);
     top: 41%;
     left: 11%;
     position: relative;
 
-    
+
+}
+.button_1 p {
+    margin: 0 auto  ;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #ffffff;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    margin-right: 15px;
+    z-index: 1;
     
 }
 
-.button-2:hover {
-    background-color: #54bdf1;
+.button_1 p:before, .button_1 p:after {
+    display: inline-block;
+    position: absolute;
+    top: 45%;
+    width: 20px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #4a2e12;
+    content: "";
+}
+.button_1 p:before {
+    left: -30px;
+    -webkit-transform: rotate( 50deg );
+    transform: rotate( 50deg );
+}
+.button_1 p:after {
+    right: -30px;
+    -webkit-transform: rotate( -50deg );
+    transform: rotate( -50deg );
+}
+.button_1 a {
+    position: relative;
+    /* justify-content: space-around; */
+    align-items: center;
+    /* margin: 0 auto; */
+    width: 200px;
+    padding: 0.5em 1em;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    background: #219DDD;
+    filter: drop-shadow(0px 2px 4px #ccc);
+    border-radius: 25px;
+     /* margin:0 auto; */
+     
+}
+.button_1 a:hover {
     transform: scale(1.05);
+    background: #54bdf1;
 }
 
-.button-2:after{
 
- transition: 0.3s ease-in-out;    
+
+
+
+/* ねこしるプラスボタン */
+.button_solid2 {
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    top: 36%;
+    left: 11%;
+    z-index: 10;
+    font-size: 1rem;
+    filter: drop-shadow(0px 2px 4px #ccc);
 }
+.button_solid2 p {
+    margin: 0 auto  ;
+    font-weight: 500;
+    font-size: 1rem;
+    color: #4a2e12;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    margin-right: 15px;
+    z-index: 1;
+    
+}
+.button_solid2 p:before, .button_solid2 p:after {
+    display: inline-block;
+    position: absolute;
+    top: 45%;
+    width: 20px;
+    height: 3px;
+    border-radius: 5px;
+    background-color: #4a2e12;
+    content: "";
+}
+.button_solid2 p:before {
+    left: -30px;
+    -webkit-transform: rotate( 50deg );
+    transform: rotate( 50deg );
+}
+.button_solid2 p:after {
+    right: -30px;
+    -webkit-transform: rotate( -50deg );
+    transform: rotate( -50deg );
+}
+.button_solid2 a {
+    position: relative;
+    display: flex;
+    /* justify-content: space-around; */
+    align-items: center;
+    /* margin: 0 auto; */
+    width: 200px;
+    padding: 8px 25px;
+    color: #FFF;
+    transition: 0.3s ease-in-out;
+    font-weight: 500;
+    background: #FD7E00;
+    filter: drop-shadow(0px 2px 4px #ccc);
+    border-radius: 25px;
+     margin:0 auto;
+     
+}
+.button_solid2 a:hover {
+    transform: scale(1.05);
+    background: #ffa144;
+}
+
+
+/* プラスボタン */
+/* .gray-huki{
+    display: inline-block;
+    position: relative;
+    padding: 0 25px;
+    color: #cccfd7;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    letter-spacing: 1px;
+}
+.gray-huki:before {
+    left: 0;
+    -webkit-transform: rotate(50deg);
+    transform: rotate(50deg);
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #d8dae1;
+    content: "";
+}
+.gray-huki:after {
+    right: 0;
+    -webkit-transform: rotate(-50deg);
+    transform: rotate(-50deg);
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    width: 20px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #d8dae1;
+    content: "";
+} */
 
 
 
@@ -229,7 +380,7 @@ background-size: 10px 10px;
     transition: none !important;
     padding: 20px;
 
-    top: 50%;
+    top: 46%;
     left: 57%;
     backdrop-filter: none !important; 
     position: absolute;
@@ -245,6 +396,7 @@ background-size: 10px 10px;
 }
 
 
+
 .type-ex::before {
   content: "";
   position: absolute;
@@ -252,7 +404,7 @@ background-size: 10px 10px;
   left: 0;
   border-style: solid;
   border-width: 0 20px 20px 0;
-  border-color: transparent rgb(0, 0, 0) transparent;
+  border-color:  rgb(0, 0, 0)transparent rgb(0, 0, 0)transparent ;
   translate: -100% -50%;
   
 }
@@ -265,7 +417,7 @@ background-size: 10px 10px;
   border-style: solid;
   border-width: 0 9px 9px 0;
   border-color: transparent #ffffff transparent transparent;
-  translate: -100% calc(-50% - 0.4px);
+  translate:    100% calc(50% + 0.4px);
 }
 
 
