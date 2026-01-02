@@ -397,7 +397,7 @@ background-size: 10px 10px;
 
 
 
-.type-ex::before {
+/* .type-ex::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -407,7 +407,7 @@ background-size: 10px 10px;
   border-color:  rgb(0, 0, 0)transparent rgb(0, 0, 0)transparent ;
   translate: -100% -50%;
   
-}
+} */
 
 .type-ex::after {
   content: "";
